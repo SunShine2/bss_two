@@ -1,0 +1,1050 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/layout.css"/>
+    <link rel="stylesheet" href="../css/kontext.css">
+    <link rel="stylesheet" href="../css/demo.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../js/ichart.1.2.src.js"></script>
+    <script src="../js/Chart.js"></script>
+    <style>
+        .dashboard canvas{ margin:0;}
+    </style>
+   <!-- <script>
+      /*  //定义数据
+       var data = [
+       {name : '1',value : 1,color:'#d1bd3a'},
+       {name : '2',value : 2,color:'#d1bd3a'},
+       {name : '3',value : 3,color:'#d1bd3a'},
+       {name : '4',value : 4,color:'#d1bd3a'},
+       {name : '5',value : 5,color:'#d1bd3a'},
+       {name : '6',value : 6,color:'#d1bd3a'},
+       {name : '7',value : 5,color:'#d1bd3a'},
+       {name : '8',value : 4,color:'#d1bd3a'},
+       {name : '9',value : 4,color:'#d1bd3a'},
+       {name : '10',value : 4,color:'#d1bd3a'},
+       {name : '11',value : 4,color:'#d1bd3a'},
+       {name : '12',value : 7,color:'#d1bd3a'}
+       ];
+       $(function(){
+       *//* var chart = new iChart.Column2D({
+       render : 'canvas_volume',//渲染的Dom目标,canvasDiv为Dom的ID
+       data: data,//绑定数据
+       width : 350,//设置宽度，默认单位为px
+       height : 290,//设置高度，默认单位为px
+       shadow:true,//激活阴影
+       background_color:'rgba(0,0,0,0)',
+       border:{
+       enable:false
+       },
+       coordinate:{//配置自定义坐标轴
+       axis:{
+       enable:true,
+       width:[1,1,1,1],
+       color:'#2e5da3'
+       },
+       scale:{
+       scale_color:'#333',
+       position:'left',//配置左值轴
+       start_scale:0,//设置开始刻度为0
+       end_scale:8,//设置结束刻度为26
+       scale_space:1,//设置刻度间距
+       listeners:{//配置事件
+       parseText:function(t,x,y){//设置解析值轴文本
+       return {text:t}
+       }
+       }
+       }
+
+       }
+       });
+       //调用绘图方法开始绘图
+       chart.draw();*//*
+       new iChart.Column2D({
+       render : 'canvas_volume',
+       data: data,
+       background_color:'rgba(0,0,0,0)',
+       border:{
+       enable:false
+       },
+       label:{
+       color:'#578baf'
+       },
+       Bar:{
+       color:'#fff'
+       },
+       Scale:{
+       color:'#fff'
+       },
+       width : 350,
+       height : 290,
+       sub_option:{
+       color:'#fff',
+       background_color:'#333'
+       },
+       coordinate:{
+       axis:{
+       enable:true,
+       width:[1,1,1,1],
+       color:'#2e5da3'
+       },
+       scale:{
+       start_scale:0,//设置开始刻度为0
+       end_scale:8,//设置结束刻度为26
+       scale_space:1,//设置刻度间距
+       scale2grid:true,
+       scale_color:'#000',
+       border:{
+       color:'#ff0000'
+       },
+       grids:{
+       vertical:{
+       scale_color:'#ff0000'
+       },
+       horizontal:{
+       scale_color:'#ff0000'
+       }
+       }
+       }
+       }
+       }).draw();
+       });*/
+      $(function(){
+         /* var data = [
+              {
+                  name : 'business Hall1',
+                  value:[12,17,19,21],
+                  color:'#32bdbc'
+              },
+              {
+                  name : 'business Hall2',
+                  value:[20,24,21,25],
+                  color:'#d75a5e'
+              },
+              {
+                  name : 'business Hall3',
+                  value:[16,18,20,28],
+                  color:'#d75a5e'
+              }
+              ,
+              {
+                  name : 'business Hall3',
+                  value:[32,37,39,37],
+                  color:'#d75a5e'
+              }
+          ];
+          var chart = new iChart.ColumnStacked2D({
+              render : 'canvas_volume',
+              data: data,
+              fontsize:10,
+              labels:["business Hall1","business Hall2","business Hall3","business Hall4"],
+              border:{
+                  enable:false
+              },
+              label:{
+                  color:"#ff0000",
+                  fontsize:10
+              },
+              padding:'8 0',
+              width : 350,
+              height : 290,
+              column_width:70,
+              gradient : true,//应用背景渐变
+              gradient_mode:'LinearGradientDownUp',//渐变类型
+              color_factor : 0.1,//渐变因子
+              background_color : 'rgba(0,0,0,0)',
+              sub_option:{
+                  label:{color:'#f9f9f9',fontsize:12,fontweight:600},
+                  border : false
+              },
+              label:{color:'#dcd6cb',font:'微软雅黑',fontsize:12,fontweight:600},
+              legend:{
+                  enable:true,
+                  align:'center',
+                  valid:'bottom',
+                  background_color : null,
+                  line_height:25,
+                  color:'#dcd6cb',
+                  fontsize:12,
+                  font:'微软雅黑',
+                  fontweight:600,
+                  border : {
+                      enable : false
+                  }
+              },
+              column_width:80,
+              coordinate:{
+                  background_color : 0,
+                  grid_color:'#888888',
+                  axis : {
+                      color : '#c0d0e0',
+                      width : 0
+                  },
+                  scale:[{
+                      position:'left',
+                      scale_enable : false,
+                      start_scale:0,
+                      scale_space:15,
+                      end_scale:120,
+                      label:{color:'#dcd6cb',fontsize:11,fontweight:600}
+                  }],
+                  width:'80%',
+                  height:'76%'
+              }
+          });
+//利用自定义组件构造左上侧单位
+          chart.plugin(new iChart.Custom({
+              drawFn:function(){
+//计算位置
+                  var coo = chart.getCoordinate(),
+                          x = coo.get('originx'),
+                          y = coo.get('originy');
+//在左上侧的位置，渲染一个单位的文字
+                  chart.target.textAlign('end')
+                          .textBaseline('bottom')
+                          .textFont('600 12px 微软雅黑')
+                          .fillText('单位(个)',x,y-14,false,'#be5863')
+              }
+          }));
+          chart.draw();
+
+
+      });
+          $(function(){
+              var data1 = [
+                  {
+                      name : '北京',
+                      value:[-9,1,12,20,26,30,32,29,22,12,0,-6],
+                      color:'#1f7e92',
+                      line_width:1
+                  }
+              ];
+              var chart = new iChart.Area2D({
+                  render : 'canvas_volume_one',
+                  data: data1,
+                  width : 340,
+                  height :260,
+                  border:{
+                      enable:false
+                  },
+                  label:{
+                      color:"#fff",
+                      fontSize:'10',
+                      Bar:{
+                          color:'#fff',
+                          fontSize:'#fff'
+                      }
+                  },
+                  background_color:'rgba(0,0,0,0)',
+                  coordinate:{height:'90%',background_color:'#1d334a',striped:false},
+                  sub_option:{
+                      hollow_inside:false,//设置一个点的亮色在外环的效果
+                      point_size:10
+                  },
+                  labels:["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"]
+              });
+              chart.draw();
+
+
+
+      var data3 = [
+          {
+              name : 'DPS01A',
+              value:[45,52,54,74,90,84,23,13,23,23,54,12],
+              color:'#1385a5'
+          },
+          {
+              name : 'DPS01B',
+              value:[11,22,11,22,33,44,11,1,11,11,11,2],
+              color:'#c56966'
+          }
+      ];
+      var chart = new iChart.ColumnMulti2D({
+            border:{
+              enable:false
+            },
+          render : 'canvasDiv',
+          data: data3,
+          background_color:'rgba(0,0,0,0)',
+          labels:["14:05","14:05","14:05","14:05","14:05","14:05","14:05","14:05","14:05","14:05","14:05","14:05"],
+          labes:{
+              color:'#558cb3',
+              Bar:{
+                  color:'#fff'
+              }
+          },
+          width : 380,
+          height : 260,
+          legend:{
+              enable:true,
+              border : {
+                  enable : false
+              }
+          },
+          coordinate:{
+          background_color:'rgba(0,0,0,0)',
+              scale:[{
+                  position:'left',
+                  start_scale:0,
+                  end_scale:100,
+                  scale_space:20,
+                  scale_color:'#254064'
+              }],
+              width:320,
+              height:220
+          }
+      });
+      chart.draw();*/
+
+
+
+
+
+    </script>-->
+<script>
+    $(function(){
+        var data = [
+            {
+                name : '直营店',
+                value:[2,3,5,4],
+                color:'#32bdbc'
+            },
+            {
+                name : '加盟店',
+                value:[1,3,4,5],
+                color:'#d75a5e'
+            }
+        ];
+        var chart = new iChart.ColumnStacked2D({
+            render : 'canvasDiv',
+            data: data,
+            labels:["2004年","2005年","2006年","2007年"],
+            padding:'8 0',
+            width : 380,
+            height : 220,
+            column_width:70,
+            border : {
+                enable : false
+            },
+            background_color : 'rgba(0,0,0,0)',
+            sub_option:{
+                label:{color:'#f9f9f9',fontsize:12,fontweight:600},
+                border : false
+            },
+            label:{color:'#5d94ba',font:'微软雅黑',fontsize:12,fontweight:600},
+            legend:{
+                enable:true,
+                background_color : null,
+                line_height:25,
+                color:'#dcd6cb',
+                fontsize:12,
+                font:'微软雅黑',
+                fontweight:600,
+                border : {
+                    enable : false
+                }
+            },
+            column_width:80,
+            coordinate:{
+                background_color : 0,
+                grid_color:'#1f2d3b',
+                axis : {
+                    color : '#c0d0e0',
+                    width : 0
+                },
+                scale:[{
+                    position:'left',
+                    scale_enable : false,
+                    start_scale:0,
+                    scale_space:1,
+                    end_scale:8,
+                    label:{color:'#79bded',fontsize:12,fontweight:200}
+                }],
+                width:'80%',
+                height:'70%'
+            }
+        });
+//利用自定义组件构造左上侧单位
+        chart.plugin(new iChart.Custom({
+            drawFn:function(){
+//计算位置
+                var coo = chart.getCoordinate(),
+                        x = coo.get('originx'),
+                        y = coo.get('originy');
+//在左上侧的位置，渲染一个单位的文字
+                chart.target.textAlign('end')
+                        .textBaseline('bottom')
+                        .textFont('200 12px 微软雅黑')
+                        .fillText('单位(个)',x+30,y-14,false,'#79bded')
+            }
+        }));
+        chart.draw();
+
+
+        var data1 = [
+            {
+                name : '直营店',
+                value:[2,3,5,4],
+                color:'#32bdbc'
+            },
+            {
+                name : '加盟店',
+                value:[1,3,4,5],
+                color:'#d75a5e'
+            }
+        ];
+        var chart = new iChart.ColumnStacked2D({
+            render : 'canvas_volume_one',
+            data: data1,
+            labels:["一月","二月","三月","四月","五月","六月"],
+            background_color : 'rgba(0,0,0,0)',
+            width : 400,
+            height : 260,
+            label:{color:'#79bded',font:'微软雅黑',fontsize:12,fontweight:200},
+            border:{
+                enable:false
+            },
+            legend:{
+                enable:true,
+                background_color : null,
+                border : {
+                    enable : false
+                }
+            },
+            coordinate:{
+                grid_color:'#1f2d3b',
+                axis:{
+                    color:"#2a4f84"
+                },
+                background_color : 'rgba(0,0,0,0)',
+                scale:[{
+                    position:'left',
+                    start_scale:0,
+                    end_scale:10,
+                    scale_space:1,
+                    label:{color:'#79bded',fontsize:12,fontweight:200}
+                }],
+                width:320,
+                height:180
+            }
+        });
+        chart.plugin(new iChart.Custom({
+            drawFn:function(){
+//计算位置
+                var coo = chart.getCoordinate(),
+                        x = coo.get('originx'),
+                        y = coo.get('originy');
+//在左上侧的位置，渲染一个单位的文字
+                chart.target.textAlign('end')
+                        .textBaseline('bottom')
+                        .textFont('200 12px 微软雅黑')
+                        .fillText('单位(个)',x+30,y-14,false,'#79bded')
+
+
+                var avg = chart.total/5,
+                        coo = chart.getCoordinate(),
+                        x = coo.get('originx'),
+                        W = coo.width;
+                chart.target.line(x,100,x+W,100,1,'#b32c0d')
+                        .textAlign('start')
+                        .textBaseline('middle')
+                        .textFont('600 12px Verdana')
+                        .fillText('平均:$'+avg,x+W+5,100,false,'#b32c0d');
+            }
+        }));
+        chart.draw();
+
+        var data = [
+            {
+                name : 'A产品',
+                value:[2280,1600,1014,2590,2800,3200,2184,3456,2693,2064,2414,2044],
+                color:'#134c2f',
+                line_width:1
+            },
+            {
+                name : 'A产品',
+                value:[2480,1800,1014,2590,2800,3200,2184,3456,2693,2064,2414,2044],
+                color:'#fff45c',
+                line_width:1
+            },{
+                name : 'A产品',
+                value:[2680,2100,1014,2590,2800,3200,2184,3456,2693,2064,2414,2044],
+                color:'#00a0e9',
+                line_width:1
+            },{
+                name : 'A产品',
+                value:[2880,2000,1014,2590,2800,3200,2184,3456,2693,2064,2414,2044],
+                color:'#80c269',
+                line_width:1
+            }        ];
+//创建x轴标签文本
+        var labels = ["一月","二月","三月","四月","五月","六月","七月","八月","九月","十月","十一月","十二月"];
+        var chart = new iChart.LineBasic2D({
+            render : 'canvasDiv1',
+            data: data,
+            padding:'5 1',//设置padding,以便title能占满x轴
+            sub_option:{
+                label:false,
+                hollow_inside:false,//设置一个点的亮色在外环的效果
+                point_size:10
+            },
+            tip:{
+                enable:true,
+                listeners:{
+//tip:提示框对象、name:数据名称、value:数据值、text:当前文本、i:数据点的索引
+                    parseText:function(tip,name,value,text,i){
+                        return labels[i]+"订单数:<span style='color:red'>"+value+"</span>万件";
+                    }
+                }
+            },
+            width : 400,
+            height : 240,
+            background_color:'rgba(0,0,0,0)',
+            border:{
+                enable:false,
+                radius:5
+            },
+            coordinate:{
+                width : 320,
+                height : 180,
+                grid_color:'#2a4f84',
+                axis:{
+                    color:"#2a4f84"
+                },
+
+                background_color:null,//设置坐标系为透明背景
+                scale:[{
+                    position:'left',
+                    label:{
+                        color:'#79bded',
+                        fontsize:12,
+                        fontweight:200
+                    },
+                    start_scale:0,
+                    end_scale:4000,
+                    scale_space:500
+                },{
+                    position:'bottom',
+                    label:{
+                        color:'#79bded',
+                        fontweight:200
+                    },
+                    labels:labels
+                }]
+            }
+        });
+        chart.draw();
+
+
+        var data12 = [
+            {
+                name : 'DPS01A',
+                value:[45,52,54,74,90,84],
+                color:'#1385a5'
+            },
+            {
+                name : 'DPS01B',
+                value:[60,80,105,125,108,120],
+                color:'#c56966'
+            }
+        ];
+        var chart = new iChart.ColumnMulti2D({
+            render : 'canvasDiv2',
+            data: data12,
+            labels:["一月","二月","三月","四月","五月","六月"],
+            width : 400,
+            height : 260,
+            background_color : 'rgba(0,0,0,0)',
+            label:{color:'#79bded',font:'微软雅黑',fontsize:12,fontweight:200},
+            border:{
+              enable:false
+            },
+            legend:{
+                enable:false,
+                background_color : null,
+                border : {
+                    enable : false
+                }
+            },
+            coordinate:{
+                grid_color:'#2a4f84',
+                border:{
+                    enable:false
+                },
+                axis:{
+                    color:"#2a4f84"
+                },
+                background_color : 'rgba(0,0,0,0)',
+                scale:[{
+                    start_scale:0,
+                    end_scale:140,
+                    scale_space:20,
+                    label:{
+                        color:'#79bded'
+                    },
+                    label:{color:'#79bded',fontsize:12,fontweight:200}
+                }],
+                width:320,
+                height:180
+            }
+        });
+        chart.draw();
+    });
+</script>
+<script>
+    $(function(){
+
+        var data12 = [
+            {
+                name : 'A产品',
+                value:[2280,1600,1014,2590,2800,3200,2184],
+                color:'#134c2f',
+                line_width:1
+            },
+            {
+                name : 'A产品',
+                value:[2480,1800,1014,2590,2800,3200,2184],
+                color:'#fff45c',
+                line_width:1
+            },{
+                name : 'A产品',
+                value:[2680,2100,1014,2590,2800,3200,2184],
+                color:'#00a0e9',
+                line_width:1
+            },{
+                name : 'A产品',
+                value:[2880,2000,1014,2590,2800,3200,2184],
+                color:'#80c269',
+                line_width:1
+            }        ];
+        var labels = ["12.05","12.05","12.05","12.05","12.05","12.05","12.05"];
+        var chart = new iChart.LineBasic2D({
+            render : 'canvasDiv12',
+            data: data12,
+            align:'center',
+            background_color:'rgba(0,0,0,0)',
+            width : 400,
+            height : 240,
+          border:null,
+            crosshair:{
+                enable:true,
+                line_color:'#ec4646'
+            },
+            sub_option : {
+                smooth : true,
+                label:false,
+                hollow:false,
+                hollow_inside:false,
+                point_size:8
+            },
+            coordinate:{
+                width:320,
+                height:180,
+                striped_factor : 0.18,
+
+                grid_color:'#2a4f84',
+                axis:{
+                    color:'#2a4f84',
+                    width:[1,1,1,1]
+                },
+                scale:[{
+                    position:'left',
+                    start_scale:0,
+                    end_scale:6000,
+                    scale_space:1000,
+                    scale_size:2,
+                    scale_enable : false,
+                    label : {color:'#79bded',font : '微软雅黑',fontsize:12,fontweight:200},
+                    scale_color:'#9f9f9f'
+                },{
+                    position:'bottom',
+                    label : {color:'#79bded',font : '微软雅黑',fontsize:12,fontweight:200},
+                    scale_enable : false,
+                    labels:labels
+                }]
+            }
+        });
+
+        chart.draw();
+    });
+</script>
+</head>
+<body>
+    <nav class="order_nav">
+        <a class="back" data-href='view/main.html'>back</a>
+        <ul id="nav_li">
+            <li><a class="active">New Subscription</a></li>
+            <li><a>Main Product changing</a></li>
+            <li><a>Product/package</a></li>
+            <li><a>Ordering</a></li>
+        </ul>
+
+    </nav>
+
+    <article class="kontext">
+        <div class="layer one show">
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_one">volume of business</h2>
+                <div class="dashboard_img" id="canvasDiv">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_two">Average response time</h2>
+                <div class="dashboard_img" id="canvas_volume_one">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_warning"></i>
+                <h2 class="category_title_three">Backlog of pending work orders</h2>
+                <div class="dashboard_img" id="canvasDiv1">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_danger"></i>
+                <h2 class="category_title_four">The amount of success, failure distribution</h2>
+                <div class="dashboard_img" id="canvasDiv2">
+                </div>
+            </section>
+        </div>
+        <div class="layer two">
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_one">volume of business</h2>
+                <div class="dashboard_img" id="canvasDiv12">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_two">Average response time</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_warning"></i>
+                <h2 class="category_title_three">Backlog of pending work orders</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_danger"></i>
+                <h2 class="category_title_four">The amount of success, failure distribution</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+        </div>
+        <div class="layer three">
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_one">volume of business</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_two">Average response time</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_warning"></i>
+                <h2 class="category_title_three">Backlog of pending work orders</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_danger"></i>
+                <h2 class="category_title_four">The amount of success, failure distribution</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+        </div>
+
+        <div class="layer four">
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_one">volume of business</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_two">Average response time</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_warning"></i>
+                <h2 class="category_title_three">Backlog of pending work orders</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_danger"></i>
+                <h2 class="category_title_four">The amount of success, failure distribution</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <ul class="bullets"></ul>
+
+    <script src="../js/kontext.js"></script>
+    <script>
+        // Create a new instance of kontext
+        var k = kontext( document.querySelector( '.kontext' ) );
+
+
+        // API METHODS:
+
+        // k.prev(); // Show prev layer
+        // k.next(); // Show next layer
+        // k.show( 3 ); // Show specific layer
+        // k.getIndex(); // Index of current layer
+        // k.getTotal(); // Total number of layers
+
+
+        // DEMO-SPECIFIC:
+
+        var bulletsContainer = document.body.querySelector( '.bullets' );
+
+        // Create one bullet per layer
+        var bullet = document.getElementById('nav_li').getElementsByTagName('a');
+        for( var i = 0, len = k.getTotal(); i < len; i++ ) {
+
+            bullet[i].className = i === 0 ? 'active' : '';
+            bullet[i].setAttribute( 'index', i );
+            bullet[i].onclick = function( event ) { k.show( event.target.getAttribute( 'index' ) );
+            for( var i = 0, len = k.getTotal(); i < len; i++ ){
+                bullet[i].className='';
+                this.className='active';
+            }
+            };
+            bullet[i].ontouchstart = function( event ) { k.show( event.target.getAttribute( 'index' ) );
+               /* for( var i = 0, len = k.getTotal(); i < len; i++ ){
+                    bullet[i].className='';
+                    this.className='active';
+                }*/
+            };
+
+        }
+
+        // Update the bullets when the layer changes
+        k.changed.add( function( layer, index ) {
+            var bullets = document.body.querySelectorAll( '.bullets li a' );
+            for( var i = 0, len = bullets.length; i < len; i++ ) {
+                bullets[i].className = i === index ? 'active' : '';
+            }
+        } );
+
+        document.addEventListener( 'keyup', function( event ) {
+            if( event.keyCode === 37 ) k.prev();
+            if( event.keyCode === 39 ) k.next();
+        }, false );
+
+        var touchX = 0;
+        var touchConsumed = false;
+
+        document.addEventListener( 'touchstart', function( event ) {
+            touchConsumed = false;
+            lastX = event.touches[0].clientX;
+        }, false );
+
+        document.addEventListener( 'touchmove', function( event ) {
+            event.preventDefault();
+
+            if( !touchConsumed ) {
+                if( event.touches[0].clientX > lastX + 10 ) {
+                    k.prev();
+                    touchConsumed = true;
+                }
+                else if( event.touches[0].clientX < lastX - 10 ) {
+                    k.next();
+                    touchConsumed = true;
+                }
+            }
+        }, false );
+
+    </script>
+
+    <!--<div id="experiment">
+
+    <div id="cube">
+        <div class="face one">
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_one">Fulfillment Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_two">Usage Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_warning"></i>
+                <h2 class="category_title_three">Revenue Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_danger"></i>
+                <h2 class="category_title_four">After-care Quality </h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+        </div>
+        <div class="face two opacity">
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_one">Fulfillment Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_two">Usage Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_warning"></i>
+                <h2 class="category_title_three">Revenue Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_danger"></i>
+                <h2 class="category_title_four">After-care Quality </h2>
+                <div class="dashboard_img">
+                </div>
+            </section>
+        </div>
+        <div class="face three">
+            Lorem ipsum.
+        </div>
+        <div class="face four">
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_one">Fulfillment Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_two">Usage Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_warning"></i>
+                <h2 class="category_title_three">Revenue Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_danger"></i>
+                <h2 class="category_title_four">After-care Quality </h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+        </div>
+        <div class="face five">
+            Rotating 3D cube
+        </div>
+        <div class="face six">
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_one">Fulfillment Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_two">Usage Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_warning"></i>
+                <h2 class="category_title_three">Revenue Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_danger"></i>
+                <h2 class="category_title_four">After-care Quality </h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</div>-->
+
+
+
+
+</body>
+</html>
+

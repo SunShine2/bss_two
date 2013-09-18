@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+    <title></title>
+    <link rel="stylesheet" href="../css/layout.css"/>
+    <script src="../js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var aDashboard=['53','15','76','30']; //配置百分比
+            var aRotate=[];
+            for(var i=0; i<aDashboard.length;i++)
+            {
+                var iRotateDeg='rotate('+aDashboard[i]*3+'deg)';
+                aRotate[i]=iRotateDeg;
+            }
+
+            for(var i=0; i<aDashboard.length;i++){
+                $('.dashboard_pointer').eq(i).css('webkit-transform',aRotate[i]);
+
+            }
+
+            var timer=setInterval(function(){
+                var iPer=parseInt($('.percent span').eq(0).html());
+
+                if(iPer<aDashboard[0])
+                {
+                    iPer++;
+                    $('.percent span').eq(0).html(iPer);
+                }
+                else{
+                    clearInterval(timer);
+                }
+            },5);
+
+            var timer1=setInterval(function(){
+                var iPer=parseInt($('.percent span').eq(1).html());
+
+                if(iPer<aDashboard[1])
+                {
+                    iPer++;
+                    $('.percent span').eq(1).html(iPer);
+                }
+                else{
+                    clearInterval(timer1);
+                }
+            },5);
+
+            var timer2=setInterval(function(){
+                var iPer=parseInt($('.percent span').eq(2).html());
+
+                if(iPer<aDashboard[2])
+                {
+                    iPer++;
+                    $('.percent span').eq(2).html(iPer);
+                }
+                else{
+                    clearInterval(timer2);
+                }
+            },5);
+
+            var timer3=setInterval(function(){
+                var iPer=parseInt($('.percent span').eq(3).html());
+
+                if(iPer<aDashboard[3])
+                {
+                    iPer++;
+                    $('.percent span').eq(3).html(iPer);
+                }
+                else{
+                    clearInterval(timer3);
+                }
+            },5);
+
+            if(window.sessionStorage)
+            {
+                if(sessionStorage.getItem('cancel_one_error'))
+                {
+                    $('.iconbar').eq(0).removeClass('icon_danger').addClass('icon_success');
+                }
+              if(sessionStorage.getItem('cancel_two_error'))
+                {
+                    $('#dashboard_3').removeClass('icon_danger').addClass('icon_success');
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+<section class="dashboard dashboart_open" data-href="view/order.html">
+    <i class="iconbar icon_danger"></i>
+    <h2 class="category_title_one">Fulfillment Quality</h2>
+    <div class="dashboard_img">
+        <div class="dashboard_pointer">
+
+        </div>
+        <p class="percent"><span>00</span>%</p>
+    </div>
+</section>
+
+<section class="dashboard dashboart_open" data-href="view/usage.html">
+    <i class="iconbar icon_success"></i>
+    <h2 class="category_title_two">Usage Quality</h2>
+    <div class="dashboard_img">
+        <div class="dashboard_pointer">
+
+        </div>
+        <p class="percent"><span>00</span>%</p>
+    </div>
+</section>
+
+<section class="dashboard dashboart_open" data-href="view/revenue.html">
+    <i class="iconbar icon_danger" id="dashboard_3"></i>
+    <h2 class="category_title_three">Revenue Quality</h2>
+    <div class="dashboard_img">
+        <div class="dashboard_pointer">
+
+        </div>
+        <p class="percent"><span>00</span>%</p>
+    </div>
+</section>
+
+<section class="dashboard dashboart_open" data-href="view/after-care.html">
+    <i class="iconbar icon_success"></i>
+    <h2 class="category_title_four">After-care Quality </h2>
+    <div class="dashboard_img">
+        <div class="dashboard_pointer">
+
+        </div>
+        <p class="percent"><span>00</span>%</p>
+    </div>
+</section>
+</body>
+</html>

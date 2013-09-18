@@ -1,0 +1,1027 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/layout.css"/>
+    <link rel="stylesheet" href="../css/kontext.css">
+    <link rel="stylesheet" href="../css/demo.css">
+    <script src="../js/jquery-2.0.3.min.js"></script>
+    <script src="../js/ichart.1.2.src.js"></script>
+   <script>
+       $(function(){
+           <!--第一个图（1，4，7）-->
+           var data1 = [
+               {
+                   name : 'business Hall1',
+                   value:[113,122,121,120,117,113,111],
+                   color:'#d1bd3a'
+               },
+               {
+                   name : 'business Hall2',
+                   value:[74,86,85,86,85,85,88],
+                   color:'#29ad01'
+               },
+               {
+                   name : 'business Hall3',
+                   value:[48,73,71,71,69,60,58],
+                   color:'#d11a05'
+               }
+           ];
+           var chart = new iChart.ColumnStacked2D({
+               render : 'plot1',
+               data: data1,
+               labels:["14:05","14:10","14:15","14:20","14:25","14:30","14:35"],
+               background_color : 'rgba(0,0,0,0)',
+               width : 400,
+               height : 260,
+
+               label:{color:'#79bded',font:'微软雅黑',fontsize:12,fontweight:200},
+               border:{
+                   enable:false
+               },
+               legend:{
+                   enable:false
+               },
+               coordinate:{
+                   grid_color:'#2a4f84',
+                   axis:{
+                       color:"#2a4f84"
+                   },
+                   background_color : 'rgba(0,0,0,0)',
+                   scale:[{
+                       position:'left',
+                       start_scale:0,
+                       end_scale:360,
+                       scale_space:60,
+                       label:{color:'#79bded',fontsize:12,fontweight:200}
+                   }],
+                   width:320,
+                   height:180
+               }
+           });
+           chart.plugin(new iChart.Custom({
+               drawFn:function(){
+                   coo = chart.getCoordinate(),
+                           x = coo.get('originx'),
+                           W = coo.width;
+                   chart.target.line(x,54,x+W,54,1,'#1fabfd')
+                           .textAlign('start')
+                           .textBaseline('middle')
+                           .textFont('200 12px')
+                           .fillText('Threshold',x+W/2-20,34,false,'#1fabfd');
+               }
+           }));
+           chart.draw();
+           chart.eventOff();
+
+           var data4 = [
+               {
+                   name : 'business Hall1',
+                   value:[17.50,17.94,17.64,17.47,17.71,17.52],
+                   color:'#d1bd3a'
+               },
+               {
+                   name : 'business Hall2',
+                   value:[5.83,5.98,5.88,5.82,5.90,5.84],
+                   color:'#29ad01'
+               }
+           ];
+           var chart = new iChart.ColumnStacked2D({
+               render : 'plot4',
+               data: data4,
+               labels:["14:05","14:10","14:15","14:20","14:25","14:30"],
+               background_color : 'rgba(0,0,0,0)',
+               width : 400,
+               height : 260,
+
+               label:{color:'#79bded',font:'微软雅黑',fontsize:12,fontweight:200},
+               border:{
+                   enable:false
+               },
+               legend:{
+                   enable:false
+               },
+               coordinate:{
+                   grid_color:'#2a4f84',
+                   axis:{
+                       color:"#2a4f84"
+                   },
+                   background_color : 'rgba(0,0,0,0)',
+                   scale:[{
+                       position:'left',
+                       start_scale:0,
+                       end_scale:50,
+                       scale_space:5,
+                       label:{color:'#79bded',fontsize:12,fontweight:200}
+                   }],
+                   width:320,
+                   height:180
+               }
+           });
+           chart.plugin(new iChart.Custom({
+               drawFn:function(){
+                   coo = chart.getCoordinate(),
+                           x = coo.get('originx'),
+                           W = coo.width;
+                   chart.target.line(x,84,x+W,84,1,'#1fabfd')
+                           .textAlign('start')
+                           .textBaseline('middle')
+                           .textFont('200 12px')
+                           .fillText('Threshold',x+W/2-20,74,false,'#1fabfd');
+               }
+           }));
+           chart.draw();
+           chart.eventOff();
+
+           var data7 = [
+               {
+                   name : 'business Hall1',
+                   value:[31.88,31.98,32.24,31.89,32.20,32.34],
+                   color:'#d1bd3a'
+               },
+               {
+                   name : 'business Hall2',
+                   value:[127.54,127.95,128.99,127.59,128.83,129.36],
+                   color:'#29ad01'
+               },
+               {
+                   name : 'business Hall3',
+                   value:[13.66,13.70,13.82,13.67,13.80,13.86],
+                   color:'#d11a05'
+               },
+               {
+                   name : 'business Hall4',
+                   value:[54.66,54.83,55.28,54.68,55.21,55.44],
+                   color:'#0048fe'
+               }
+           ];
+           var chart = new iChart.ColumnStacked2D({
+               render : 'plot7',
+               data: data7,
+               labels:["14:05","14:10","14:15","14:20","14:25","14:30"],
+               background_color : 'rgba(0,0,0,0)',
+               width : 400,
+               height : 260,
+
+               label:{color:'#79bded',font:'微软雅黑',fontsize:12,fontweight:200},
+               border:{
+                   enable:false
+               },
+               legend:{
+                   enable:false
+               },
+               coordinate:{
+                   grid_color:'#2a4f84',
+                   axis:{
+                       color:"#2a4f84"
+                   },
+                   background_color : 'rgba(0,0,0,0)',
+                   scale:[{
+                       position:'left',
+                       start_scale:0,
+                       end_scale:350,
+                       scale_space:35,
+                       label:{color:'#79bded',fontsize:12,fontweight:200}
+                   }],
+                   width:320,
+                   height:180
+               }
+           });
+           chart.plugin(new iChart.Custom({
+               drawFn:function(){
+                   coo = chart.getCoordinate(),
+                           x = coo.get('originx'),
+                           W = coo.width;
+                   chart.target.line(x,84,x+W,84,1,'#1fabfd')
+                           .textAlign('start')
+                           .textBaseline('middle')
+                           .textFont('200 12px')
+                           .fillText('Threshold',x+W/2-20,74,false,'#1fabfd');
+               }
+           }));
+           chart.draw();
+           chart.eventOff();
+
+           <!--第二个图（2，5，8）-->
+           var data2 = [
+               {
+                   name : 'A产品',
+                   value:[1050,1630,1870,1550,1970,1400,1700],
+                   color:'#d1bd3a',
+                   line_width:1
+               },
+               {
+                   name : 'A产品',
+                   value:[1680,1415,1325,1463,1872,1845,1960],
+                   color:'#29ad01',
+                   line_width:1
+               },{
+                   name : 'A产品',
+                   value:[2687,2805,2818,2590,2460,2568,2372],
+                   color:'#d11a05',
+                   line_width:1
+               }   ];
+           var labels=["14:05","14:10","14:15","14:20","14:25","14:30","14:35"];
+           var chart = new iChart.LineBasic2D({
+               render : 'plot2',
+               data: data2,
+               align:'center',
+               background_color:'rgba(0,0,0,0)',
+               width : 400,
+               height : 260,
+               border:null,
+               crosshair:{
+                   enable:true,
+                   line_color:'#ec4646'
+               },
+               sub_option : {
+                   smooth : true,
+                   label:false,
+                   hollow:false,
+                   hollow_inside:false,
+                   point_size:8
+               },
+               coordinate:{
+                   width:300,
+                   height:180,
+                   striped_factor : 0.18,
+
+                   grid_color:'#2a4f84',
+                   axis:{
+                       color:'#2a4f84',
+                       width:[1,1,1,1]
+                   },
+                   scale:[{
+                       position:'left',
+                       start_scale:1000,
+                       end_scale:3400,
+                       scale_space:300,
+                       scale_size:2,
+                       scale_enable : false,
+                       label : {color:'#79bded',font : '微软雅黑',fontsize:12,fontweight:200},
+                       scale_color:'#9f9f9f'
+                   },{
+                       position:'bottom',
+                       label : {color:'#79bded',font : '微软雅黑',fontsize:12,fontweight:200},
+                       scale_enable : false,
+                       labels:labels
+                   }]
+               }
+           });
+           chart.plugin(new iChart.Custom({
+               drawFn:function(){
+                   coo = chart.getCoordinate(),
+                           x = coo.get('originx'),
+                           W = coo.width;
+                   chart.target.line(x,74,x+W,74,1,'#1fabfd')
+                           .textAlign('start')
+                           .textBaseline('middle')
+                           .textFont('200 12px')
+                           .fillText('Threshold',x+W/2-20,54,false,'#1fabfd');
+               }
+           }));
+           chart.draw();
+           chart.eventOff();
+
+           var data5 = [
+               {
+                   name : 'A产品',
+                   value:[5040,4245,3975,4389,5616,5535,5880],
+                   color:'#d1bd3a',
+                   line_width:1
+               },
+               {
+                   name : 'A产品',
+                   value:[5200,6890,7610,5650,6910,6200,7100],
+                   color:'#29ad01',
+                   line_width:1
+               }   ];
+           var labels=["14:05","14:10","14:15","14:20","14:25","14:30","14:35"];
+           var chart = new iChart.LineBasic2D({
+               render : 'plot5',
+               data: data5,
+               align:'center',
+               background_color:'rgba(0,0,0,0)',
+               width : 400,
+               height : 260,
+
+               border:null,
+               crosshair:{
+                   enable:true,
+                   line_color:'#ec4646'
+               },
+               sub_option : {
+                   smooth : true,
+                   label:false,
+                   hollow:false,
+                   hollow_inside:false,
+                   point_size:8
+               },
+               coordinate:{
+                   width:300,
+                   height:180,
+                   striped_factor : 0.18,
+
+                   grid_color:'#2a4f84',
+                   axis:{
+                       color:'#2a4f84',
+                       width:[1,1,1,1]
+                   },
+                   scale:[{
+                       position:'left',
+                       start_scale:3000,
+                       end_scale:12000,
+                       scale_space:900,
+                       scale_size:2,
+                       scale_enable : false,
+                       label : {color:'#79bded',font : '微软雅黑',fontsize:12,fontweight:200},
+                       scale_color:'#9f9f9f'
+                   },{
+                       position:'bottom',
+                       label : {color:'#79bded',font : '微软雅黑',fontsize:12,fontweight:200},
+                       scale_enable : false,
+                       labels:labels
+                   }]
+               }
+           });
+           chart.plugin(new iChart.Custom({
+               drawFn:function(){
+                   coo = chart.getCoordinate(),
+                           x = coo.get('originx'),
+                           W = coo.width;
+                   chart.target.line(x,84,x+W,84,1,'#1fabfd')
+                           .textAlign('start')
+                           .textBaseline('middle')
+                           .textFont('200 12px')
+                           .fillText('Threshold',x+W/2-20,74,false,'#1fabfd');
+               }
+           }));
+           chart.draw();
+           chart.eventOff();
+
+           var data8 = [
+               {
+                   name : 'A产品',
+                   value:[112,102,106,108,110,104,102],
+                   color:'#d1bd3a',
+                   line_width:1
+               },
+               {
+                   name : 'A产品',
+                   value:[55,58,56,52,57,55,50],
+                   color:'#29ad01',
+                   line_width:1
+               },{
+                   name : 'A产品',
+                   value:[22,20,21,23,24,22,20],
+                   color:'#d11a05',
+                   line_width:1
+               },{
+                   name : 'A产品',
+                   value:[12,14,13,10,11,12,12],
+                   color:'#0048fe',
+                   line_width:1
+               }        ];
+           var labels=["14:05","14:10","14:15","14:20","14:25","14:30","14:35"];
+           var chart = new iChart.LineBasic2D({
+               render : 'plot8',
+               data: data8,
+               align:'center',
+               background_color:'rgba(0,0,0,0)',
+               width : 400,
+               height : 260,
+
+               border:null,
+               crosshair:{
+                   enable:true,
+                   line_color:'#ec4646'
+               },
+               sub_option : {
+                   smooth : true,
+                   label:false,
+                   hollow:false,
+                   hollow_inside:false,
+                   point_size:8
+               },
+               coordinate:{
+                   width:300,
+                   height:180,
+                   striped_factor : 0.18,
+
+                   grid_color:'#2a4f84',
+                   axis:{
+                       color:'#2a4f84',
+                       width:[1,1,1,1]
+                   },
+                   scale:[{
+                       position:'left',
+                       start_scale:0,
+                       end_scale:250,
+                       scale_space:25,
+                       scale_size:2,
+                       scale_enable : false,
+                       label : {color:'#79bded',font : '微软雅黑',fontsize:12,fontweight:200},
+                       scale_color:'#9f9f9f'
+                   },{
+                       position:'bottom',
+                       label : {color:'#79bded',font : '微软雅黑',fontsize:12,fontweight:200},
+                       scale_enable : false,
+                       labels:labels
+                   }]
+               }
+           });
+           chart.plugin(new iChart.Custom({
+               drawFn:function(){
+                   coo = chart.getCoordinate(),
+                           x = coo.get('originx'),
+                           W = coo.width;
+                   chart.target.line(x,84,x+W,84,1,'#1fabfd')
+                           .textAlign('start')
+                           .textBaseline('middle')
+                           .textFont('200 12px')
+                           .fillText('Threshold',x+W/2-20,74,false,'#1fabfd');
+               }
+           }));
+           chart.draw();
+           chart.eventOff();
+
+
+           <!--第三个图（3，6，9）-->
+
+           var data3= [
+               {
+                   name : 'DPS01A',
+                   value:[98.43,98.11,98.42,98.54,98.43,98.12,98.41],
+                   color:'#2a69dc'
+               },
+               {
+                   name : 'DPS01B',
+                   value:[1.57,1.89,1.58,1.46,1.57,1.88,1.59],
+                   color:'#f2a40d'
+               }
+           ];
+           var chart = new iChart.ColumnMulti2D({
+               render : 'plot3',
+               data: data3,
+               labels:["14:05","14:10","14:15","14:20","14:25","14:30","14:35"],
+               width : 400,
+               height : 260,
+               background_color : 'rgba(0,0,0,0)',
+               label:{color:'#79bded',font:'微软雅黑',fontsize:12,fontweight:200},
+               border:{
+                   enable:false
+               },
+               legend:{
+                   enable:false,
+                   background_color : null,
+                   border : {
+                       enable : false
+                   }
+               },
+               coordinate:{
+                   grid_color:'#2a4f84',
+                   border:{
+                       enable:false
+                   },
+                   axis:{
+                       color:"#2a4f84"
+                   },
+                   background_color : 'rgba(0,0,0,0)',
+                   scale:[{
+                       start_scale:0,
+                       end_scale:100,
+                       scale_space:10,
+                       label:{
+                           color:'#79bded'
+                       },
+                       label:{color:'#79bded',fontsize:12,fontweight:200}
+                   }],
+                   width:320,
+                   height:180
+               }
+           });
+           chart.plugin(new iChart.Custom({
+               drawFn:function(){
+                   coo = chart.getCoordinate(),
+                           x = coo.get('originx'),
+                           W = coo.width;
+                   chart.target.line(x,193,x+W,193,1,'#f2a40d')
+                           .textAlign('start')
+                           .textBaseline('middle')
+                           .textFont('200 12px')
+                           .fillText('Threshold',x+W-20,180,false,'#f2a40d');
+               }
+           }));
+
+           chart.draw();
+           chart.eventOff();
+
+           var data6= [
+               {
+                   name : 'DPS01A',
+                   value:[99.94,99.91,99.94,99.95,99.94,99.91,99.94],
+                   color:'#2a69dc'
+               },
+               {
+                   name : 'DPS01B',
+                   value:[1.05,1.09,1.06,1.05,1.06,1.09,1.06],
+                   color:'#f2a40d'
+               }
+           ];
+           var chart = new iChart.ColumnMulti2D({
+               render : 'plot6',
+               data: data6,
+               labels:["14:05","14:10","14:15","14:20","14:25","14:30","14:35"],
+               width : 400,
+               height : 260,
+               background_color : 'rgba(0,0,0,0)',
+               label:{color:'#79bded',font:'微软雅黑',fontsize:12,fontweight:200},
+               border:{
+                   enable:false
+               },
+               legend:{
+                   enable:false,
+                   background_color : null,
+                   border : {
+                       enable : false
+                   }
+               },
+               coordinate:{
+                   grid_color:'#2a4f84',
+                   border:{
+                       enable:false
+                   },
+                   axis:{
+                       color:"#2a4f84"
+                   },
+                   background_color : 'rgba(0,0,0,0)',
+                   scale:[{
+                       start_scale:0,
+                       end_scale:100,
+                       scale_space:10,
+                       label:{
+                           color:'#79bded'
+                       },
+                       label:{color:'#79bded',fontsize:12,fontweight:200}
+                   }],
+                   width:320,
+                   height:180
+               }
+           });
+           chart.plugin(new iChart.Custom({
+               drawFn:function(){
+                   coo = chart.getCoordinate(),
+                           x = coo.get('originx'),
+                           W = coo.width;
+                   chart.target.line(x,193,x+W,193,1,'#f2a40d')
+                           .textAlign('start')
+                           .textBaseline('middle')
+                           .textFont('200 12px')
+                           .fillText('Threshold',x+W-20,180,false,'#f2a40d');
+               }
+           }));
+
+           chart.draw();
+           chart.eventOff();
+
+           var data9= [
+               {
+                   name : 'DPS01A',
+                   value:[96.43,96.11,96.63,96.54,95.94,95.91,96.41],
+                   color:'#2a69dc'
+               },
+               {
+                   name : 'DPS01B',
+                   value:[3.57,3.89,3.37,3.46,4.06,4.09,3.59],
+                   color:'#f2a40d'
+               }
+           ];
+           var chart = new iChart.ColumnMulti2D({
+               render : 'plot9',
+               data: data9,
+               labels:["14:05","14:10","14:15","14:20","14:25","14:30","14:35"],
+               width : 400,
+               height : 260,
+               background_color : 'rgba(0,0,0,0)',
+               label:{color:'#79bded',font:'微软雅黑',fontsize:12,fontweight:200},
+               border:{
+                   enable:false
+               },
+               legend:{
+                   enable:false,
+                   background_color : null,
+                   border : {
+                       enable : false
+                   }
+               },
+               coordinate:{
+                   grid_color:'#2a4f84',
+                   border:{
+                       enable:false
+                   },
+                   axis:{
+                       color:"#2a4f84"
+                   },
+                   background_color : 'rgba(0,0,0,0)',
+                   scale:[{
+                       start_scale:0,
+                       end_scale:100,
+                       scale_space:10,
+                       label:{
+                           color:'#79bded'
+                       },
+                       label:{color:'#79bded',fontsize:12,fontweight:200}
+                   }],
+                   width:320,
+                   height:180
+               }
+           });
+           chart.plugin(new iChart.Custom({
+               drawFn:function(){
+                   coo = chart.getCoordinate(),
+                           x = coo.get('originx'),
+                           W = coo.width;
+                   chart.target.line(x,193,x+W,193,1,'#f2a40d')
+                           .textAlign('start')
+                           .textBaseline('middle')
+                           .textFont('200 12px')
+                           .fillText('Threshold',x+W-20,180,false,'#f2a40d');
+               }
+           }));
+
+           chart.draw();
+           chart.eventOff();
+
+       });
+    </script>
+</head>
+<body>
+    <nav class="order_nav">
+        <a class="back" data-href='view/main.html'>back</a>
+        <ul id="nav_li">
+            <li><a class="active">Voice</a></li>
+            <li><a>Sms</a></li>
+            <li><a>Data service</a></li>
+        </ul>
+
+    </nav>
+
+    <article class="kontext">
+        <div class="layer one show order">
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_one">Voice Call Transaction</h2>
+                <div id="plot1" class="bar"></div>
+                <span class="label label_top">(K Transaction)</span>
+                <span class="label label_bottom">(time)</span>
+                <span class="dim dim_one">Local</span>
+                <span class="dim dim_two">National</span>
+                <span class="dim dim_three">International</span>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_two">Average Voice Call Set-up Time</h2>
+                <div id="plot2" class="bar"></div>
+                <span class="label label_top">(ms)</span>
+                <span class="label label_bottom">(time)</span>
+                <span class="dim dim_two">National</span>
+                <span class="dim dim_three">International</span>
+                <span class="dim dim_one">Local</span>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_three">Voice Call CDRs Number in Comparison</h2>
+                <div class="dashboard_img chart_three user_one">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_four">Voice Call Successful Rate</h2>
+                <div id="plot3" class="bar"></div>
+                <span class="label label_top">(%)</span>
+                <span class="label label_bottom">(time)</span>
+                <span class="dim dim_five">Success Volume</span>
+                <span class="dim dim_six">Failed Volume</span>
+            </section>
+        </div>
+        <div class="layer two order">
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_one">SMS Transaction</h2>
+                <div id="plot4" class="bar"></div>
+                <span class="label label_top">(K Transaction)</span>
+                <span class="label label_bottom">(time)</span>
+                <span class="dim dim_one">Prepaid</span>
+                <span class="dim dim_two">Postpaid</span>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_two">Average SMS Receiving Time</h2>
+                <div id="plot5" class="bar"></div>
+                <span class="label label_top">(ms)</span>
+                <span class="label label_bottom">(time)</span>
+                <span class="dim dim_two">Postpaid</span>
+                <span class="dim dim_one">Prepaid</span>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_three">SMS CDRs Number in Comparison</h2>
+                <div class="dashboard_img user_two">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_four">SMS Successful Rate</h2>
+                <div id="plot6" class="bar"></div>
+                <span class="label label_top">(%)</span>
+                <span class="label label_bottom">(time)</span>
+                <span class="dim dim_five">Success Volume</span>
+                <span class="dim dim_six">Failed Volume</span>
+            </section>
+        </div>
+        <div class="layer three order">
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_one">Data Service Transaction</h2>
+                <div id="plot7" class="bar"></div>
+                <span class="label label_top">(K Transaction)</span>
+                <span class="label label_bottom">(time)</span>
+                <span class="dim dim_one">3G-Gold Use</span>
+                <span class="dim dim_two">3G-Normal User</span>
+                <span class="dim dim_three">2G-Gold User</span>
+                <span class="dim dim_four">2G-Normal User</span>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_two">Average Upstream Speed for Web Browsing</h2>
+                <div id="plot8" class="bar"></div>
+                <span class="label label_top">(kb/s)</span>
+                <span class="label label_bottom">(time)</span>
+                <span class="dim dim_one">3G-Gold User</span>
+                <span class="dim dim_two">3G-Normal User</span>
+                <span class="dim dim_three">2G-Gold User</span>
+                <span class="dim dim_four">2G-Normal User</span>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_three">Data Service CDRs Number in Comparison</h2>
+                <div class="dashboard_img user_three">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_four">Data Service Successful Rate</h2>
+                <div id="plot9" class="bar"></div>
+                <span class="label label_top">(%)</span>
+                <span class="label label_bottom">(time)</span>
+                <span class="dim dim_five">Success Volume</span>
+                <span class="dim dim_six">Failed Volume</span>
+            </section>
+        </div>
+
+
+    </article>
+
+    <ul class="bullets"></ul>
+
+    <script src="../js/kontext.js"></script>
+    <script>
+        // Create a new instance of kontext
+        var k = kontext( document.querySelector( '.kontext' ) );
+
+
+        // API METHODS:
+
+        // k.prev(); // Show prev layer
+        // k.next(); // Show next layer
+        // k.show( 3 ); // Show specific layer
+        // k.getIndex(); // Index of current layer
+        // k.getTotal(); // Total number of layers
+
+
+        // DEMO-SPECIFIC:
+
+        var bulletsContainer = document.body.querySelector( '.bullets' );
+
+        // Create one bullet per layer
+        var bullet = document.getElementById('nav_li').getElementsByTagName('a');
+        for( var i = 0, len = k.getTotal(); i < len; i++ ) {
+
+            bullet[i].className = i === 0 ? 'active' : '';
+            bullet[i].setAttribute( 'index', i );
+            bullet[i].onclick = function( event ) { k.show( event.target.getAttribute( 'index' ) );
+            for( var i = 0, len = k.getTotal(); i < len; i++ ){
+                bullet[i].className='';
+                this.className='active';
+            }
+            };
+            bullet[i].ontouchstart = function( event ) { k.show( event.target.getAttribute( 'index' ) );
+               /* for( var i = 0, len = k.getTotal(); i < len; i++ ){
+                    bullet[i].className='';
+                    this.className='active';
+                }*/
+            };
+
+        }
+
+        // Update the bullets when the layer changes
+        k.changed.add( function( layer, index ) {
+            var bullets = document.body.querySelectorAll( '.bullets li a' );
+            for( var i = 0, len = bullets.length; i < len; i++ ) {
+                bullets[i].className = i === index ? 'active' : '';
+            }
+        } );
+
+        document.addEventListener( 'keyup', function( event ) {
+            if( event.keyCode === 37 ) k.prev();
+            if( event.keyCode === 39 ) k.next();
+        }, false );
+
+        var touchX = 0;
+        var touchConsumed = false;
+
+        document.addEventListener( 'touchstart', function( event ) {
+            touchConsumed = false;
+            lastX = event.touches[0].clientX;
+        }, false );
+
+        document.addEventListener( 'touchmove', function( event ) {
+            event.preventDefault();
+
+            if( !touchConsumed ) {
+                if( event.touches[0].clientX > lastX + 10 ) {
+                    k.prev();
+                    touchConsumed = true;
+                }
+                else if( event.touches[0].clientX < lastX - 10 ) {
+                    k.next();
+                    touchConsumed = true;
+                }
+            }
+        }, false );
+
+    </script>
+
+    <!--<div id="experiment">
+
+    <div id="cube">
+        <div class="face one">
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_one">Fulfillment Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_two">Usage Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_warning"></i>
+                <h2 class="category_title_three">Revenue Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_danger"></i>
+                <h2 class="category_title_four">After-care Quality </h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+        </div>
+        <div class="face two opacity">
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_one">Fulfillment Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_two">Usage Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_warning"></i>
+                <h2 class="category_title_three">Revenue Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_danger"></i>
+                <h2 class="category_title_four">After-care Quality </h2>
+                <div class="dashboard_img">
+                </div>
+            </section>
+        </div>
+        <div class="face three">
+            Lorem ipsum.
+        </div>
+        <div class="face four">
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_one">Fulfillment Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_two">Usage Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_warning"></i>
+                <h2 class="category_title_three">Revenue Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_danger"></i>
+                <h2 class="category_title_four">After-care Quality </h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+        </div>
+        <div class="face five">
+            Rotating 3D cube
+        </div>
+        <div class="face six">
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_one">Fulfillment Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_success"></i>
+                <h2 class="category_title_two">Usage Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_warning"></i>
+                <h2 class="category_title_three">Revenue Quality</h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+
+            <section class="dashboard dashboard_order">
+                <i class="iconbar icon_danger"></i>
+                <h2 class="category_title_four">After-care Quality </h2>
+                <div class="dashboard_img">
+
+                </div>
+            </section>
+        </div>
+    </div>
+    </div>
+</div>-->
+
+
+
+
+</body>
+</html>
+

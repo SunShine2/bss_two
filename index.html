@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title></title>
+    <link rel="stylesheet" href="css/layout.css"/>
+    <!--<script type="text/javascript" src="js/zepto.js"></script>-->
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('#view').load(function(){
+                $("#view").contents().find(".back").click(function(){
+                    var shref=$(this).attr('data-href');
+                    $('#view').attr('src',shref);
+                    $('.subnav a').removeClass('subnav_on');
+                    $('.subnav i').removeClass('i_on');
+                    $('.subnav').slideUp();
+                });
+
+                $("#view").contents().find(".error_one").click(function(){
+                    var shref=$(this).attr('data-href');
+                    $('#view').attr('src',shref);
+                });
+
+                $("#view").contents().find(".error_two").click(function(){
+                    var shref=$(this).attr('data-href');
+                    $('#view').attr('src',shref);
+                });
+
+                $("#view").contents().find(".dashboart_open").click(function(){
+                    var shref=$(this).attr('data-href');
+                    $('#view').attr('src',shref);
+                    $('.subnav a').removeClass('subnav_on');
+                    $('.subnav i').removeClass('i_on');
+                    $('.subnav a').eq($(this).index()).addClass('subnav_on');
+                    $('.subnav i').eq($(this).index()).addClass('i_on');
+                    $('.subnav').slideDown();
+                });
+            });
+
+
+                $('.nav li').click(function(){
+                $('.nav li').removeClass('active');
+                $('.nav li a').removeClass('on');
+                $(this).addClass('active');
+                $(this).find('a').addClass('on');
+            });
+
+
+
+            $('.subnav a').click(function(){
+                $('.subnav a').removeClass('subnav_on');
+                $('.subnav a i').removeClass('i_on');
+                $(this).addClass('subnav_on');
+                $(this).find('i').addClass('i_on');
+            });
+
+            $('.nav_list a').click(function(){
+                $('#view').attr('src',$(this).attr('data-href'));
+            });
+
+            $('.bottom_btn_two').click(function(){
+                sessionStorage.removeItem('cancel_two_error');
+                sessionStorage.removeItem('cancel_one_error');
+                var shref=$(this).attr('data-href');
+                $('#view').attr('src',shref);
+            });
+
+            $('.bottom_btn_one').click(function(){
+                var shref=$(this).attr('data-href');
+                $('#view').attr('src',shref);
+            });
+        });
+    </script>
+</head>
+<body>
+<section class="topbar">
+    <h1 class="huawei">Business Operation Monitoring</h1>
+</section>
+    <nav class="nav">
+        <ul class="nav_list">
+            <li class="active"><a class="on" data-href="view/main.html"><span>Business Operation Monitoring</span></a></li>
+            <div class="subnav">
+                <a data-href="view/order.html"><i></i>Fulfillment</a>
+                <a data-href="view/usage.html"><i></i>Usage</a>
+                <a data-href="view/revenue.html"><i></i>Revenue</a>
+                <a data-href="view/after-care.html"><i></i>After-care</a>
+            </div>
+            <li><a data-href="view/forecast.html"><span>Capability Forecast</span></a></li>
+            <li style="display:none;"><a data-href="view/alarm.html"><span>Event/Alarm</span></a></li>
+            <li><a data-href="view/send_sms.html"><span>SMS Sending</span></a></li>
+        </ul>
+        <p></p>
+        <span class="bottom_btn bottom_btn_one" data-href="view/benefits.html"></span>
+        <span class="bottom_btn bottom_btn_two" data-href="view/main.html"></span>
+    </nav>
+
+    <section class="main">
+        <iframe id="view" src="view/main.html" style="width:100%; min-height:100%;" frameborder=0 scrolling=no ></iframe>
+
+    </section>
+</body>
+</html>

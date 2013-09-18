@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/layout.css"/>
+    <link rel="stylesheet" href="../css/kontext.css">
+    <link rel="stylesheet" href="../css/demo.css">
+    <script src="../js/jquery-2.0.3.min.js"></script>
+    <script>
+        $(function(){
+            var date={ "one1": [20,50,60,90],"one2": [20,50,60,90] ,"one3": [20,50,60,90] ,"one4": [20,50,60,90] ,"one5": [20,50,60,90] ,"one6": [20,50,60,90] }
+            var aErrorDate=[30,20,10,10];
+            $('.error_two_btn').click(function(){
+                $('.fix_info').hide();
+                if($('.error_info').hasClass('animation'))
+                {
+                    $('.error_info').removeClass('animation')
+                }
+                var iLeft=parseInt($(this).css('left'))+186;
+                var iTop=parseInt($(this).css('top'));
+                $('.error_info p').eq(0).html('Average response time: '+date['one'+$(this).index()][0]+'s');
+                $('.error_info p').eq(1).html('Average response time: '+date['one'+$(this).index()][1]);
+                $('.error_info p').eq(2).html('Average response time: '+date['one'+$(this).index()][2]+'%');
+                $('.error_info p').eq(3).html('Average response time: '+date['one'+$(this).index()][3]+'%');
+                $('.error_info').css('left',iLeft);
+                $('.error_info').css('top',iTop);
+                $('.error_info').show();
+                $('.error_info').addClass('animation');
+
+            });
+
+            $('.error_two_btn_err').click(function(){
+                var iLeft=parseInt($(this).css('left'))+20;
+                var iTop=parseInt($(this).css('top'))+80;
+                $('.error_info').hide();
+                $('.fix_info p').eq(0).html('Average response time: '+aErrorDate[0]+'s');
+                $('.fix_info p').eq(1).html('Average response time: '+aErrorDate[1]);
+                $('.fix_info p').eq(2).html('Average response time: '+aErrorDate[2]+'%');
+                $('.fix_info p').eq(3).html('Average response time: '+aErrorDate[3]+'%');
+                $('.fix_info').css('left',iLeft);
+                $('.fix_info').css('top',iTop);
+                $('.fix_info').show();
+                $('.fix_info').addClass('animation1');
+
+            });
+            $('#send_sms').click(function(){
+                $(window.parent.document).find('#view').attr('src',$(this).attr('data-href'));
+            });
+
+            $('#fix').click(function(){
+                $('.fix_info').hide();
+                $('.error_error').removeClass('circle_error');
+                if(window.sessionStorage)
+                {
+                    sessionStorage.setItem('cancel_two_error',1);
+                }
+                $('.repair_suc').show();
+                $('.repair_suc').addClass('repair_suc_animation');
+                setTimeout(function(){
+                    $('.repair_suc').removeClass('repair_suc_animation');
+                    $('.repair_suc').hide();
+                },1800);
+            });
+        });
+    </script>
+</head>
+<body>
+<section class="repair_suc">
+
+</section>
+<section class="error">
+   <div class="error_img error_two_img"></div>
+    <a class="error_two_btn error_two_one error_two_btn_one">Receives voucher   card top-up request</a>
+    <a class="error_two_btn error_two_three error_two_btn_two">● Check voucher cardavailable<br> ● Lock voucher</a>
+    <a class="error_two_btn error_two_four">Update  balance</a>
+    <a class="error_two_btn error_two_five">Consume voucher</a>
+    <a class="error_two_btn error_two_six">Return result</a>
+    <a class="error_two_btn error_two_seven">Return result</a>
+    <a class="error_two_two error_two_btn_one error_two_btn_err">handle  request  Check customer</a>
+    <span class="error_error circle_error error_error_two"></span>
+    <div class="error_info">
+        <p>Average response time: 20s</p>
+        <p>Queue length:50</p>
+        <p>failure rate:60%</p>
+        <p>Overtime Rate:90%</p>
+    </div>
+    <div class="fix_info">
+        <p>Average response time: 20s</p>
+        <p>Queue length:50</p>
+        <p>failure rate:60%</p>
+        <p>Overtime Rate:90%</p>
+        <a class="send_error_sms" data-href="view/send_sms_two.html" id="send_sms"></a>
+        <a class="fix_error" id="fix"></a>
+    </div>
+    <div class="error-box error-box-two error-box-no-left-border">
+        <h2 class="error_title">CRM</h2>
+    </div>
+    <div class="error-box error-box-two">
+        <h2 class="error_title">BILLING</h2>
+    </div>
+    <div class="error-box error-box-two">
+        <h2 class="error_title">UVC</h2>
+    </div>
+
+<!--    <img src="../images/error_img.png" class="error_img"/>-->
+</section>
+</body>
+</html>

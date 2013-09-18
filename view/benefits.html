@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../css/layout.css"/>
+    <link href="assets/animate.css" rel="stylesheet">
+    <script src="../js/jquery-2.0.3.min.js"></script>
+    <script src="assets/jquery.fittext.js"></script>
+    <script src="assets/jquery.lettering.js"></script>
+    <script src="jquery.textillate.js"></script>
+
+
+</head>
+<body>
+    <section class="benefit">
+        <div>
+       <p class="benefit_title">Improved Business User Experience of IT services</p>
+            <p class="benefit_p">IT Agility for requirement management</p>
+            <p class="benefit_p">Increased IT responsiveness for incident – to resolve</p>
+        </div>
+        <div>
+       <p class="benefit_title">Improved productivity factor (Up to 50%)</p>
+            <p class="benefit_p"> Fast troubleshooting and root cause analysis</p>
+        </div>
+        <div>
+        <p class="benefit_title">Improved reliability (consistency in IT services delivery quality)</p>
+            <p class="benefit_p">Translates to consistent User experience from BSS apps and infra</p>
+            <p class="benefit_p">Marketing interlock with IT yields quality feedback</p>
+            <p class="benefit_p">Aligned to business forecast, yielding high ROI</p>
+        </div>
+
+    </section>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+
+        $(function (){
+
+            $('.benefit_title')
+                    .fitText(3)
+                    .textillate({ in: { effect: 'bounceIn' }});
+
+            $('.benefit_p')
+                    .fitText(3.2, { maxFontSize: 18 })
+                    .textillate({ initialDelay: 0, in: { delay: 1, shuffle: true } });
+
+       /*     setTimeout(function () {
+                $('.fade').addClass('in');
+            }, 250);
+
+            setTimeout(function () {
+                $('h1.glow').removeClass('in');
+            }, 2000);*/
+
+        });
+
+    </script>
+</body>
+</html>
